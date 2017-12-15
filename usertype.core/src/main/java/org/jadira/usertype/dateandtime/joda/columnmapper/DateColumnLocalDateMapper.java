@@ -16,7 +16,6 @@
 package org.jadira.usertype.dateandtime.joda.columnmapper;
 
 import java.sql.Date;
-import java.util.Calendar;
 
 import org.jadira.usertype.spi.shared.AbstractDateColumnMapper;
 import org.jadira.usertype.spi.shared.DatabaseZoneConfigured;
@@ -91,6 +90,6 @@ public class DateColumnLocalDateMapper extends AbstractDateColumnMapper<LocalDat
 	
     @Override
     public final DstSafeDateType getHibernateType() {
-    	return databaseZone == null ? DstSafeDateType.INSTANCE : new DstSafeDateType(Calendar.getInstance(databaseZone.toTimeZone()));
+    	return DstSafeDateType.INSTANCE;
     }
 }
